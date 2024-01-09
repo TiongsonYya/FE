@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const CustomerNavbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light bg-white py-3 shadow-sm">
@@ -16,19 +16,22 @@ const Navbar = () => {
                 <NavLink exact className="nav-link" activeClassName="active" to="/">Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/products">Products</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/about">About</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/contacts">Contacts</NavLink>
+                <NavLink className="nav-link" activeClassName="active" to="/UICustomer/CustomerProducts">Products</NavLink>
               </li>
             </ul>
             <div className="button">
-              <NavLink to="/UICustomer/customer" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i> Login</NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i> Register</NavLink>
-              <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i> Cart (0)</NavLink>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-shopping-cart me-1"></i> Cart (0)
+              </NavLink>
+            </div>
+            <div className="nav-item dropdown" style={{ marginLeft: '10px' }}>
+              <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i className="fa fa-user me-1"></i> Profile
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><NavLink className="dropdown-item" to="/profile">Account Settings</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/orders">My Orders</NavLink></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -37,4 +40,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default CustomerNavbar;

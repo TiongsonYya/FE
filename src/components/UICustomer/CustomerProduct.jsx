@@ -2,9 +2,9 @@ import { cleanup } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import products from '../assets/fakedata/product';
+import products from '../../assets/fakedata/product'; 
 
-const Product = () => {
+const CustomerProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -59,11 +59,23 @@ const Product = () => {
         <h3 className="display-6 fw-bold my-4">${product.price}
         </h3>
         <p className="lead">{product.description}</p>
-       </div>
-       <button className="btn btn-outline-dark px-4 py-2">
-          Add to Cart
-       </button>
-       <NavLink className="btn btn-outline-dark px-4 py-2">Go to Cart</NavLink>
+
+        <div className="d-flex align-items-center mt-4">
+          <button className="btn btn-outline-dark px-3 py-1 me-2">
+            <i className="fa fa-minus"></i>
+          </button>
+          <span className="mx-2"></span>
+          <button className="btn btn-outline-dark px-3 py-1 me-2" >
+            <i className="fa fa-plus"></i>
+          </button>
+        </div>
+        <div className="mt-3"> {/* Added margin-top space */}
+          <button className="btn btn-outline-dark px-4 py-2 me-2">
+            Add to Cart
+          </button>
+          <NavLink className="btn btn-outline-dark px-4 py-2">Go to Cart</NavLink>
+        </div>
+        </div>
       </>
     );
   };
@@ -79,4 +91,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default CustomerProduct;

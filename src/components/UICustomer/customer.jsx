@@ -1,10 +1,12 @@
-import React from 'react'
-import Products from './Products';
+import React from 'react';
+import CustomerNavbar from './CustomerNavbar';
+import CustomerProducts from './CustomerProducts';
 
-
-const Home = () =>{
+const Customer = () => {
   return (
+    
     <div className="hero">
+      <CustomerNavbar/>
         <div class="card text-bg-dark text-white border-0">
   <img src="/assets/bg.avif" class="card-img" alt="Background"
   height="550px"/>
@@ -17,8 +19,8 @@ const Home = () =>{
    
   </div>
 </div>
-    <Products/>   
+    <CustomerProducts/>   
     </div>
   );
 }
-export default Home;
+export default Customer;
